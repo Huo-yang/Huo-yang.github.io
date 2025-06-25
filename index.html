@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2025/06/21/git/">
-        <h2 class="post-title">git</h2>
+    <a href="/2025/06/25/Git%E6%95%99%E7%A8%8B/">
+        <h2 class="post-title">Git教程</h2>
     </a>
     <div class="category-and-date">
         
@@ -199,7 +199,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/6/21
+            2025/6/25
         </span>
         
         
@@ -207,7 +207,23 @@
     <div class="description">
         <div class="content" v-pre>
             
-            
+            <h1 id="Git-Learning"><a href="#Git-Learning" class="headerlink" title="Git Learning"></a>Git Learning</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2025/06/25/Git%E6%95%99%E7%A8%8B/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.jpg" alt="Git常用命令.jpg" title="Git常用命令"></p>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p><code>git init</code> 本地创建仓库（新建文件夹后进入文件夹路径输入命令）<br><code>git clone &lt;url&gt;</code> 克隆github等远程仓库<br><em>文档中的<code>.git</code>目录为配置文件目录</em>  </p>
+<h3 id="查看仓库的状态"><a href="#查看仓库的状态" class="headerlink" title="查看仓库的状态"></a>查看仓库的状态</h3><p><code>git status</code> 查看仓库的状态<br><code>git diff</code> 查看变更内容<br><img src="/./git%20diff.png" alt="git git diff.png" title="git diff"></p>
+<h3 id="跟踪和提交"><a href="#跟踪和提交" class="headerlink" title="跟踪和提交"></a>跟踪和提交</h3><p><code>git add .</code> 添加所有文件目录下的文件到暂存区<br><code>git add &lt;file&gt;</code> 添加指定文件到暂存区<br><code>git commit</code> 提交到本地仓库（会跳入到修改说明界面）<br><code>git commit -m &quot;&lt;str&gt;&quot;</code> 提交到本地仓库（直接提交修改和修改说明）</p>
+<h3 id="回退"><a href="#回退" class="headerlink" title="回退"></a>回退</h3><p><code>git reset --soft &lt;commit id&gt;</code> 回退但保留工作区和暂存区的修改<br><code>git reset --hard &lt;commit id&gt;</code> 回退不保留工作区和暂存区的修改<br><code>git reset --mixed &lt;commit id&gt;</code> 回退只保留工作区的修改<br><img src="/./git%20reset.png" alt="git reset.png" title="git reset"></p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p><code>git rm &lt;file&gt;</code> 把文件从工作区和暂存区同时删除<br><code>git rm --cached &lt;file&gt;</code> 把文件从暂存区删除，但保留在当前工作区中<br><code>git rm -r *</code> 递归删除某个目录下的所有子目录和文件<br><em>删除后不要忘记提交</em></p>
+<h3 id="忽略"><a href="#忽略" class="headerlink" title="忽略"></a>忽略</h3><p><code>.gitignore</code>文件用于忽略，将文件写入<code>.gitignore</code>中忽略  </p>
+<ol>
+<li>空行或者以<code>#</code>开头的行会被Git忽略。一般空行用于可读性的分隔，<code>#</code>一般用作注释</li>
+<li>使用标准的Blob模式匹配，例如：<br><code>*</code>通配任意个字符，例如<code>*.a</code>忽略所有的.a文件<br><code>?</code>匹配单个字符<br><code>[]</code>表示匹配列表中的单个字符，比如：[abc]表示a&#x2F;b&#x2F;c<br><code>**</code>表示匹配任意的中间目录<br><code>[0-9]</code>表示任意一位数字<br><code>[a-z]</code>表示任意一位小写字母<br><em>使用<code>!</code>可以取反</em></li>
+</ol>
+<h3 id="上传和拉取"><a href="#上传和拉取" class="headerlink" title="上传和拉取"></a>上传和拉取</h3><p><code>git push</code> 上传到远程仓库<br><code>git pull</code> 远程仓库拉取到本地仓库<br><code>git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code> 拉取远程仓库内容</p>
+<h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h3><p><code>git remote -v</code> 查看仓库关联  </p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p><code>git branch</code> 查看分支<code>*</code>标记为当前分支<br><code>git branch &lt;branch&gt;</code> 创建分支<br><code>git switch &lt;branch&gt;</code> 切换分支<br><code>git merge &lt;branch&gt;</code> 合并分支<br><code>git branch -d &lt;branch&gt;</code> 删除已合并的分支<br><code>git branch -D &lt;branch&gt;</code> 删除未合并的分支<br><code>git log --oneline --graph --decorate --all</code>  查看分支日志</p>
+<h2 id="仓库介绍"><a href="#仓库介绍" class="headerlink" title="仓库介绍"></a>仓库介绍</h2><p><img src="/2025/06/25/Git%E6%95%99%E7%A8%8B/%E4%BB%93%E5%BA%93%E5%88%86%E5%8C%BA.png" alt="仓库分区.png" title="仓库分区"><br>工作区<br>暂存区<br>本地仓库<br>远程仓库</p>
+<h3 id="文件状态"><a href="#文件状态" class="headerlink" title="文件状态"></a>文件状态</h3><p><img src="/2025/06/25/Git%E6%95%99%E7%A8%8B/%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81.png" alt="文件状态png" title="文件状态"></p>
+
             
         </div>
     </div>
@@ -221,16 +237,16 @@
         
         <span class="tag">
             
-            <a href="/tags/git/" style="color: #ffa2c4">Git</a>
+            <a href="/tags/git/" style="color: #00bcd4">Git</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/github/" style="color: #ff7d73">Github</a>
+            <a href="/tags/github/" style="color: #03a9f4">Github</a>
         </span>
         
     </div>
-    <a href="/2025/06/21/git/" class="go-post">阅读全文</a>
+    <a href="/2025/06/25/Git%E6%95%99%E7%A8%8B/" class="go-post">阅读全文</a>
 </div>
 
 
